@@ -26,7 +26,7 @@ choco install yisangsay
 ```
 
 #### Manual Download
-Download the latest Windows release from [GitHub Releases](https://github.com/VectorSophie/yisangsay-rs/releases) and extract to a directory in your PATH.
+Download the latest Windows release from [GitHub Releases](https://github.com/VectorSophie/yisangsay-independent/releases) and extract to a directory in your PATH.
 
 ### Linux
 
@@ -39,17 +39,17 @@ sudo apt install yisangsay
 ```
 
 #### Manual Download
-Download the latest Linux release from [GitHub Releases](https://github.com/VectorSophie/yisangsay-rs/releases).
+Download the latest Linux release from [GitHub Releases](https://github.com/VectorSophie/yisangsay-independent/releases).
 
 ### macOS
 
-Download the latest macOS release from [GitHub Releases](https://github.com/VectorSophie/yisangsay-rs/releases).
+Download the latest macOS release from [GitHub Releases](https://github.com/VectorSophie/yisangsay-independent/releases).
 
 ### Build from Source
 
 ```sh
-git clone https://github.com/VectorSophie/yisangsay-rs.git
-cd yisangsay-rs
+git clone https://github.com/VectorSophie/yisangsay-independent.git
+cd yisangsay-independent
 cargo build -r
 ```
 

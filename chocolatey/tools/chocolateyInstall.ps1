@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $packageName = 'yisangsay'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $version = '0.1.2'
-$url64 = "https://github.com/VectorSophie/yisangsay-rs/releases/download/v$version/yisangsay-x86_64-pc-windows-gnu.zip"
+$url64 = "https://github.com/VectorSophie/yisangsay-independent/releases/download/v$version/yisangsay-x86_64-pc-windows-gnu.zip"
 
 $packageArgs = @{
   packageName    = $packageName

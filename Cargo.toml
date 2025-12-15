@@ -4,7 +4,7 @@ version = "0.1.2"
 edition = "2021"
 description = "Yisangsay is a CLI program like cowsay, but instead of a talking cow, it's Yi Sang from Limbus Company!"
 license = "GPL-3.0"
-repository = "https://github.com/VectorSophie/yisangsay-rs"
+repository = "https://github.com/VectorSophie/yisangsay-independent"
 authors = ["VectorSophie <jay7math@gmail.com>"]
 
 [dependencies]
