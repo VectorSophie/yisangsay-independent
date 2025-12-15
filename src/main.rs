@@ -3,10 +3,9 @@ mod frames;
 mod display;
 
 use crate::cli::{Cli, Commands};
-use crate::frames::{STATIC_FRAME, ANIMATE1_FRAMES, ANIMATE2_FRAMES};
+use crate::frames::{STATIC_FRAME, ANIMATE1_FRAMES};
 use crate::display::{display_say_command, display_animation_once, check_terminal_size, setup_terminal, cleanup_terminal, spawn_exit_listener};
 use clap::Parser;
-use rand::Rng;
 use tokio::sync::broadcast;
 
 #[tokio::main]
@@ -23,9 +22,8 @@ async fn main() {
         } => {
             let frames = match variant_number {
                 1 => &*ANIMATE1_FRAMES,
-                2 => &*ANIMATE2_FRAMES,
                 _ => {
-                    eprintln!("Invalid variant number. Use 1 or 2.");
+                    eprintln!("Invalid variant number. Use 1.");
                     std::process::exit(1);
                 }
             };
@@ -83,16 +81,8 @@ async fn main() {
             // Spawn the exit listener
             spawn_exit_listener(exit_tx.clone());
             
-            let mut rng = rand::rng();
-            
             loop {
-                // Randomly select animation variant (1 or 2)
-                let variant = rng.random_range(1..=2);
-                let frames = match variant {
-                    1 => &*ANIMATE1_FRAMES,
-                    2 => &*ANIMATE2_FRAMES,
-                    _ => unreachable!(),
-                };
+                let frames = &*ANIMATE1_FRAMES;
                 
                 let exit_rx = exit_tx.subscribe();
                 match display_animation_once(frames, text.as_deref(), exit_rx).await {

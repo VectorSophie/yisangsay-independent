@@ -2,12 +2,6 @@
 
 Yisangsay is a CLI program like cowsay, but instead of a talking cow, it's Yi Sang from Limbus Company!
 
-## Preview
-
-Preview of Yi Sang animation.
-
-![Preview](./yi-sang-limbus-company.gif)
-
 ## Features
 
 - Written in Rust!
@@ -23,30 +17,9 @@ Preview of Yi Sang animation.
 cargo install yisangsay
 ```
 
-### Nix
+### APT
 
-Quick usage (one-off)
-
-```sh
-nix run github:VectorSophie/yisangsay-rs -- say "To be is to change."
-```
-
-Install with flake
-
-```nix
-{
-  inputs = {
-    yisang-say.url  = "github:VectorSophie/yisangsay-rs";
-  };
-}
-```
-
-
-```nix
-{ pkgs, ... }: {
-  home.packages = [ inputs.yisang-say.packages.${pkgs.system}.yisangSay ];
-}
-```
+later, gimme some time
 
 ### Manually Build
 
