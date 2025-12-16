@@ -9,9 +9,9 @@ authors = ["VectorSophie <jay7math@gmail.com>"]
 
 [dependencies]
 lazy_static = "1.4"
-clap = {version = "4.5", features = ["derive"]}
+clap = {version = "~4.4.0", features = ["derive"]}
 crossterm = "0.27"
-tokio = { version = "1.0", features = ["full"] }
+tokio = { version = "~1.35.0", features = ["full"] }
 
 [package.metadata.deb]
 maintainer = "VectorSophie <jay7math@gmail.com>"
