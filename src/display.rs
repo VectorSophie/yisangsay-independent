@@ -1,4 +1,4 @@
-use crate::frames::{Frame, AnimatedFrames};
+use crate::frames::AnimatedFrames;
 use crossterm::{
     cursor::{MoveTo, Hide, Show},
     event::{self, Event, KeyCode, KeyModifiers},
@@ -62,31 +62,6 @@ pub fn create_speech_bubble_with_tail(text: &str, max_width: usize) -> Vec<Strin
     bubble.push(" /".to_string());
     
     bubble
-}
-
-pub fn display_say_command(frame: &Frame, text: &str) {
-    let bubble = create_speech_bubble_with_tail(text, 30);
-    let frame_lines = &frame.lines;
-    
-    let max_frame_height = frame_lines.len();
-    let max_bubble_height = bubble.len();
-    let max_height = max_frame_height.max(max_bubble_height);
-    
-    for i in 0..max_height {
-        let frame_line = if i < frame_lines.len() {
-            frame_lines[i]
-        } else {
-            ""
-        };
-        
-        let bubble_line = if i < bubble.len() {
-            &bubble[i]
-        } else {
-            ""
-        };
-        
-        println!("{frame_line} {bubble_line}");
-    }
 }
 
 pub fn check_terminal_size() -> io::Result<bool> {

@@ -1,8 +1,7 @@
 use lazy_static::lazy_static;
 use std::sync::Arc;
 
-const STATIC_FRAME_STR: &str = include_str!("../frames/frame_000.txt");
-const ANIMATE1_FRAMES_STR: [&str; 29] = [
+const ANIMATE_FRAMES_STR: [&str; 29] = [
     include_str!("../frames/frame_001.txt"),
     include_str!("../frames/frame_002.txt"),
     include_str!("../frames/frame_003.txt"),
@@ -69,7 +68,7 @@ impl Iterator for AnimatedFramesIterator {
             return None;
         }
         let max_index = self.frames.len().max(self.interval_ms.len()) - 1;
-        if self.current_frame >= max_index {
+        if self.current_frame > max_index {
             return None;
         }
         let frame = self.frames[self.current_frame].clone();
@@ -80,14 +79,8 @@ impl Iterator for AnimatedFramesIterator {
 }
 
 lazy_static! {
-    pub static ref STATIC_FRAME: Frame = Frame {
-        lines: STATIC_FRAME_STR
-            .lines()
-            .map(|line| &line[0..line.len() - 1])
-            .collect(),
-    };
-    pub static ref ANIMATE1_FRAMES: AnimatedFrames = {
-        let frames = ANIMATE1_FRAMES_STR
+    pub static ref ANIMATE_FRAMES: AnimatedFrames = {
+        let frames = ANIMATE_FRAMES_STR
             .iter()
             .map(|frame| Frame {
                 lines: frame

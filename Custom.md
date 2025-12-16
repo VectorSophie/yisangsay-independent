@@ -95,7 +95,7 @@ Open `src/frames.rs` and update:
 **A) Update the array size:**
 ```rust
 // Change [&str; 29] to [&str; N] where N is your frame count
-const ANIMATE1_FRAMES_STR: [&str; N] = [
+const ANIMATE_FRAMES_STR: [&str; N] = [
     include_str!("../frames/frame_001.txt"),
     include_str!("../frames/frame_002.txt"),
     // ... add all your frames up to frame_N
@@ -119,7 +119,7 @@ The number `100` is the milliseconds per frame. Adjust for different speeds:
 
 **Example for 15 frames:**
 ```rust
-const ANIMATE1_FRAMES_STR: [&str; 15] = [
+const ANIMATE_FRAMES_STR: [&str; 15] = [
     include_str!("../frames/frame_001.txt"),
     include_str!("../frames/frame_002.txt"),
     // ... through frame_015.txt

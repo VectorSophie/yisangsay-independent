@@ -24,10 +24,4 @@ pub enum Commands {
         /// The text for Yi Sang to say
         text: Option<String>,
     },
-
-    /// Display Yi Sang in freestyle mode. Pretty cool for ricing btw.
-    Freestyle {
-        /// The text for Yi Sang to say
-        text: Option<String>,
-    },
 }
